@@ -2,6 +2,7 @@
 <nav aria-label="Page navigation example">
 <ul class="pagination justify-content-left my-5">
 <li class="page-item disabled">
+
 <a class="page-link" href="#" tabindex="-1" aria-
 disabled="true">Previous</a>
 </li>
@@ -16,6 +17,11 @@ disabled="true">Previous</a>
 <div style="padding: 25px;">
 <div class="x_panel">
 <div class="x_content">
+<?php if(validation_errors()){?>
+ <div class="alert alert-danger" role="alert">
+ <?= validation_errors();?>
+ </div>
+ <?php }?>
 <!-- Tampilkan semua produk -->
 <div class="row">
 <!-- looping products -->
