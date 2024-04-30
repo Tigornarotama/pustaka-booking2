@@ -17,9 +17,8 @@ type="text/css">
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container">
    <a class="navbar-brand" href="<?= base_url(); ?>">Pustaka</a>
-   <button class="navbar-toggler" type="button" data-toggle="collapse" data-
-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-
-label="Toggle navigation">
+   
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
        </button>
 
@@ -31,6 +30,7 @@ only">(current)</span></a>
             if (!empty($this->session->userdata('email'))) { ?>
             <a class="nav-item nav-link" href="#">Booking Buku</a>
             <a class="nav-item nav-link" href="<?= base_url('booking'); ?>">Booking <b><?= $this->ModelBooking->getDataWhere('temp', ['email_user' => $this->session->userdata('email')])->num_rows(); ?></b> Buku</a>
+            <a class="nav-item nav-link" onclick="information('Waktu Pengambilan Buku 2x24 jam dari Booking!!!')" href="<?php echo base_url() . 'booking/exportToPdf/' . $this->session->userdata('id_user'); ?>">Cetak Bukti Booking</a>
             <a class="nav-item nav-link" href="<?= base_url('member/myprofil'); ?>">Profil Saya</a>
             <a class="nav-item nav-link" href="<?= base_url('member/logout'); ?>"><i class="fas fw
 fa-login"></i> Log out</a>
