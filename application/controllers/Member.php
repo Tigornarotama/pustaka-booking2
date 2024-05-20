@@ -49,7 +49,7 @@ $this->form_validation->set_rules('alamat', 'Alamat Lengkap', 'required', [ 'req
 ]);
 $this->form_validation->set_rules('email', 'Alamat Email',
 'required|trim|valid_email|is_unique[user.email]', [
-'valid_email' => 'Email Tidak Benar!!',
+'valid_email' => 'Email Tidak Benar!!', 
 'required' => 'Email Belum diisi!!',
 'is_unique' => 'Email Sudah Terdaftar!'
 ]);
